@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindFlip - Join 50K+ People Rewiring Their Brains Daily</title>
+    <meta name="description" content="The viral mindset shift app that's transforming lives. Join the #MindFlipChallenge and rewire limiting beliefs in just 5 seconds!">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0a23 0%, #1e1b4b 25%, #7c3aed 50%, #1e1b4b 75%, #0a0a23 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            padding: 1rem;
+            color: white;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 100% 50%; }
+            50% { background-position: 50% 100%; }
+            75% { background-position: 50% 0%; }
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(120, 58, 237, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(10px) rotate(-1deg); }
+        }
+
+        .container {
+            max-width: 28rem;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Viral Banner */
+        .viral-banner {
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            background-size: 400% 400%;
+            animation: gradientShift 3s ease infinite;
+            padding: 0.75rem;
+            border-radius: 1rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .viral-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .viral-text {
+            font-weight: 800;
+            font-size: 0.9rem;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .trending-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            background: rgba(255,255,255,0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-top: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            animation: logoGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes logoGlow {
+            from { filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.5)); }
+            to { filter: drop-shadow(0 0 30px rgba(251, 191, 36, 0.8)); }
+        }
+
+        .logo-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            color: #fbbf24;
+            filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.6));
+        }
+
+        .logo h1 {
+            font-size: 2.25rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(251, 191, 36, 0.3);
+        }
+
+        .tagline {
+            color: #e5e7eb;
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.025em;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+            color: #d1d5db;
+        }
+
+        .user-count {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .user-avatars {
+            display: flex;
+            margin-left: -0.5rem;
+        }
+
+        .avatar {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-left: -0.25rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f7b733);
+        }
+
+        .live-activity {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(239, 68, 68, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .pulse-dot {
+            width: 0.5rem;
+            height: 0.5rem;
+            background: #ef4444;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+
+        .streak {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 1.5rem 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .streak-main {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .streak-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #10b981;
+            filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.6));
+        }
+
+        .streak-info h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .streak-info p {
+            font-size: 0.875rem;
+            color: #d1d5db;
+        }
+
+        .streak-rank {
+            text-align: right;
+        }
+
+        .rank-badge {
+            background: linear-gradient(45deg, #fbbf24, #f59e0b);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-container {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: linear-gradient(135deg, var(--gradient-from), var(--gradient-to));
+            padding: 0.25rem;
+            border-radius: 1.5rem;
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            animation: cardFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(0px) rotateX(0deg); }
+            50% { transform: translateY(-10px) rotateX(2deg); }
+        }
+
+        .card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 
+                0 35px 70px -12px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.2),
+                0 0 100px rgba(var(--gradient-from-rgb), 0.3);
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-inner {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.95));
+            backdrop-filter: blur(20px);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            height: 22rem;
+            position: relative;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .card-side {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            right: 1rem;
+            bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .card-front {
+            opacity: 1;
+        }
+
+        .card-back {
+            opacity: 0;
+            transform: rotateY(180deg);
+        }
+
+        .card.flipped .card-front {
+            opacity: 0;
+        }
+
+        .card.flipped .card-back {
+            opacity: 1;
+        }
+
+        .category {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+        }
+
+        .belief {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #7c3aed, #8b5cf6, #2563eb);
+            background-size: 200% 200%;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin: 0 auto;
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+            animation: gradientMove 3s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(124, 58, 237, 0.4);
+        }
+
+        .btn-next {
+            background: linear-gradient(135deg, #10b981, #14b8a6, #06b6d4);
+        }
+
+        .icon {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        .progress-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .dot {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .dot:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.2);
+        }
+
+        .dot.active {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            transform: scale(1.4);
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.6);
+        }
+
+        /* Viral Challenge Section */
+        .challenge {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .challenge-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .challenge h3 {
+            font-weight: 800;
+            font-size: 1.5rem;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hashtag {
+            background: linear-gradient(45deg, #7c3aed, #ec4899);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .challenge p {
+            color: #e5e7eb;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .challenge-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 16px rgba(255, 107, 107, 0.3);
+        }
+
+        .invite-btn {
+            background: linear-gradient(135deg, #48dbfb, #0abde3);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 16px rgba(72, 219, 251, 0.3);
+        }
+
+        .share-btn:hover, .invite-btn:hover {
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        /* Leaderboard */
+        .leaderboard {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .leaderboard h3 {
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fbbf24;
+        }
+
+        .leaderboard-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .rank {
+            font-weight: 700;
+            width: 2rem;
+            text-align: center;
+        }
+
+        .rank.gold { color: #fbbf24; }
+        .rank.silver { color: #e5e7eb; }
+        .rank.bronze { color: #d97706; }
+
+        .footer {
+            text-align: center;
+            padding-bottom: 2rem;
+        }
+
+        .footer p {
+            color: #d1d5db;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer .credits {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer .credits a {
+            color: #fbbf24;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .footer .credits a:hover {
+            color: #f59e0b;
+            text-shadow: 0 0 20px rgba(251, 191, 36, 0.6);
+        }
+
+        /* Notification Toast */
+        .toast {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .container { padding: 0 0.5rem; }
+            .card-inner { padding: 1.5rem; height: 20rem; }
+            .belief { font-size: 1.5rem; }
+            .challenge-actions { flex-direction: column; align-items: center; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container > * {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Viral Banner -->
+        <div class="viral-banner">
+            <div class="viral-text">🔥 TRENDING: #MindFlipChallenge is EVERYWHERE! 🔥</div>
+            <div class="trending-badge">
+                <span class="pulse-dot"></span>
+                <span>50K+ joined today</span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <svg class="logo-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <h1>MindFlip</h1>
+            </div>
+            <p class="tagline">The viral mindset shift that's changing everything</p>
+        </div>
+
+        <!-- Social Proof -->
+        <div class="social-proof">
+            <div class="user-count">
+                <div class="user-avatars">
+                    <div class="avatar"></div>
+                    <div class="avatar"></div>
+                    <div class="avatar"></div>
+                </div>
+                <span>2.3M users</span>
+            </div>
+            <div class="live-activity">
+                <div class="pulse-dot"></div>
+                <span id="live-count">847</span> flipping now
+            </div>
+        </div>
+
+        <!-- Enhanced Streak -->
+        <div class="streak">
+            <div class="streak-main">
+                <svg class="streak-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+                <div class="streak-info">
+                    <h3><span id="streak-count">7</span> Day Streak! 🔥</h3>
+                    <p>You're in the top 15% of all users!</p>
+                </div>
+            </div>
+            <div class="streak-rank">
+                <div class="rank-badge">GOLD TIER</div>
+                <div style="font-size: 0.8rem; color: #d1d5db;">Rank #2,847</div>
+            </div>
+        </div>
+
+        <!-- Main Card -->
+        <div class="card-container">
+            <div class="card" id="mindset-card">
+                <div class="card-inner">
+                    <div class="card-side card-front" id="card-front">
+                        <div class="category" id="category-front">Growth</div>
+                        <h2 class="belief" id="belief-from">"I can't change"</h2>
+                        <div class="subtitle">Old mindset holding you back</div>
+                        <button class="btn" onclick="flipCard()">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                            </svg>
+                            Flip Your Mindset
+                        </button>
+                    </div>
+                    
+                    <div class="card-side card-back" id="card-back">
+                        <div class="category new" id="category-back">New Growth Mindset</div>
+                        <h2 class="belief" id="belief-to">"I'm always growing"</h2>
+                        <div class="subtitle positive">
+                            <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                            Your new empowering belief
+                        </div>
+                        <button class="btn btn-next" onclick="nextShift()">
+                            Next Challenge
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Dots -->
+        <div class="progress-dots" id="progress-dots"></div>
+
+        <!-- Viral Challenge -->
+        <div class="challenge">
+            <div class="challenge-header">
+                <h3>🏆 Daily Challenge</h3>
+            </div>
+            <div class="hashtag">#MindFlipChallenge</div>
+            <p id="challenge-text">
+                Catch yourself thinking "I can't change" and flip it to "I'm always growing" - then share your transformation!
+            </p>
+            <div class="challenge-actions">
+                <button class="share-btn" onclick="shareChallenge()">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path>
+                    </svg>
+                    Share My Flip
+                </button>
+                <button class="invite-btn" onclick="inviteFriends()">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                    </svg>
+                    Invite Friends (+5 streak)
+                </button>
+            </div>
+        </div>
+
+        <!-- Live Leaderboard -->
+        <div class="leaderboard">
+            <h3>🏅 Top Mind Flippers This Week</h3>
+            <div class="leaderboard-item">
+                <span class="rank gold">#1</span>
+                <span>Sarah M.</span>
+                <span>127 day streak</span>
+            </div>
+            <div class="leaderboard-item">
+                <span class="rank silver">#2</span>
+                <span>Alex K.</span>
+                <span>98 day streak</span>
+            </div>
+            <div class="leaderboard-item">
+                <span class="rank bronze">#3</span>
+                <span>Jordan R.</span>
+                <span>76 day streak</span>
+            </div>
+            <div class="leaderboard-item">
+                <span class="rank">#2,847</span>
+                <span>You!</span>
+                <span><span id="your-streak">7</span> day streak</span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Join the movement that's rewiring minds worldwide</p>
+            <div class="credits">
+                <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 0.5rem;">Built by</p>
+                <a href="https://www.victoryhourmedia.com" target="_blank">Victory Hour Multimedia</a>
+                <p style="font-size: 0.8rem; margin-top: 0.5rem;">
+                    <a href="mailto:info@victoryhourmedia.com" style="color: #8b5cf6;">info@victoryhourmedia.com</a>
+                </p>
+                <p style="font-size: 0.8rem; color: #10b981; font-style: italic; margin-top: 0.75rem;">
+                    Let's build something amazing
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        const mindsetShifts = [
+            {
+                from: "I can't change",
+                to: "I'm always growing",
+                category: "Growth",
+                gradientFrom: "#ef4444",
+                gradientTo: "#10b981",
+                gradientFromRgb: "239, 68, 68"
+            },
+            {
+                from: "I'm stuck in the past",
+                to: "I create my future now",
+                category: "Presence",
+                gradientFrom: "#6b7280",
+                gradientTo: "#3b82f6",
+                gradientFromRgb: "107, 114, 128"
+            },
+            {
+                from: "There's not enough",
+                to: "Opportunities are everywhere",
+                category: "Abundance",
+                gradientFrom: "#f97316",
+                gradientTo: "#eab308",
+                gradientFromRgb: "249, 115, 22"
+            },
+            {
+                from: "I'm not capable",
+                to: "I can handle anything",
+                category: "Power",
+                gradientFrom: "#8b5cf6",
+                gradientTo: "#ec4899",
+                gradientFromRgb: "139, 92, 246"
+            },
+            {
+                from: "I hate myself",
+                to: "I accept and love myself",
+                category: "Self-Love",
+                gradientFrom: "#dc2626",
+                gradientTo: "#fb7185",
+                gradientFromRgb: "220, 38, 38"
+            },
+            {
+                from: "Nothing goes right",
+                to: "I'm grateful for small wins",
+                category: "Gratitude",
+                gradientFrom: "#6366f1",
+                gradientTo: "#14b8a6",
+                gradientFromRgb: "99, 102, 241"
+            }
+        ];
+
+        let currentShift = 0;
+        let isFlipped = false;
+        let streakCount = 7;
+        let totalFlips = 847;
+
+        // Viral mechanics
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        function updateLiveCount() {
+            const liveCountEl = document.getElementById('live-count');
+            totalFlips += Math.floor(Math.random() * 3) + 1;
+            liveCountEl.textContent = totalFlips;
+        }
+
+        function updateCard() {
+            const shift = mindsetShifts[currentShift];
+            const card = document.getElementById('mindset-card');
+            
+            card.style.setProperty('--gradient-from', shift.gradientFrom);
+            card.style.setProperty('--gradient-to', shift.gradientTo);
+            card.style.setProperty('--gradient-from-rgb', shift.gradientFromRgb);
+            
+            document.getElementById('category-front').textContent = shift.category;
+            document.getElementById('category-back').textContent = `New ${shift.category} Mindset`;
+            document.getElementById('belief-from').textContent = `"${shift.from}"`;
+            document.getElementById('belief-to').textContent = `"${shift.to}"`;
+            document.getElementById('challenge-text').textContent = 
+                `Catch yourself thinking "${shift.from}" and flip it to "${shift.to}" - then share your transformation!`;
+            
+            updateProgressDots();
+        }
+
+        function updateProgressDots() {
+            const dotsContainer = document.getElementById('progress-dots');
+            dotsContainer.innerHTML = '';
+            
+            mindsetShifts.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.className = `dot ${index === currentShift ? 'active' : ''}`;
+                dot.addEventListener('click', () => {
+                    if (index !== currentShift) {
+                        currentShift = index;
+                        const card = document.getElementById('mindset-card');
+                        card.classList.remove('flipped');
+                        isFlipped = false;
+                        setTimeout(updateCard, 300);
+                    }
+                });
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        function flipCard() {
+            const card = document.getElementById('mindset-card');
+            card.classList.add('flipped');
+            isFlipped = true;
+            
+            // Update streak with viral feedback
+            setTimeout(() => {
+                streakCount++;
+                document.getElementById('streak-count').textContent = streakCount;
+                document.getElementById('your-streak').textContent = streakCount;
+                
+                // Show viral feedback
+                const messages = [
+                    "🔥 Mindset flipped! You're unstoppable!",
+                    "⚡ Neural pathways rewired! Amazing!",
+                    "🚀 Level up! Keep the streak alive!",
+                    "✨ Mind = Blown! Share this feeling!",
+                    "🎯 Transformation unlocked! Tell the world!"
+                ];
+                showToast(messages[Math.floor(Math.random() * messages.length)]);
+            }, 500);
+        }
+
+        function nextShift() {
+            currentShift = (currentShift + 1) % mindsetShifts.length;
+            const card = document.getElementById('mindset-card');
+            card.classList.remove('flipped');
+            isFlipped = false;
+            
+            setTimeout(updateCard, 300);
+        }
+
+        function shareChallenge() {
+            const shift = mindsetShifts[currentShift];
+            const shareTexts = [
+                `Just flipped "${shift.from}" to "${shift.to}" with #MindFlipChallenge! 🧠✨ This app is CHANGING LIVES! Try it: `,
+                `🔥 VIRAL ALERT: I just rewired my brain in 5 seconds! "${shift.to}" #MindFlipChallenge is the real deal! `,
+                `⚡ MIND BLOWN: Flipped from "${shift.from}" to "${shift.to}" and I feel UNSTOPPABLE! #MindFlipChallenge `,
+                `🚀 This is EVERYWHERE for a reason! Just transformed "${shift.from}" into "${shift.to}" #MindFlipChallenge `
+            ];
+            
+            const text = shareTexts[Math.floor(Math.random() * shareTexts.length)] + window.location.href;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'MindFlip Challenge - Viral Mindset Transformation',
+                    text: text,
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast("🎉 Viral post copied! Paste it everywhere!");
+                });
+            }
+        }
+
+        function inviteFriends() {
+            const inviteText = `🔥 You NEED to try this! MindFlip is going VIRAL for a reason - it literally rewires your brain in seconds! Join me in the #MindFlipChallenge: ${window.location.href}`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Join the MindFlip Challenge!',
+                    text: inviteText,
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(inviteText).then(() => {
+                    showToast("🎯 Invite link copied! Spread the transformation!");
+                    // Simulate streak bonus
+                    setTimeout(() => {
+                        streakCount += 5;
+                        document.getElementById('streak-count').textContent = streakCount;
+                        document.getElementById('your-streak').textContent = streakCount;
+                        showToast("🏆 +5 Streak Bonus for inviting friends!");
+                    }, 1000);
+                });
+            }
+        }
+
+        // Initialize
+        updateCard();
+        
+        // Viral live updates
+        setInterval(updateLiveCount, 3000);
+        
+        // Random viral notifications
+        const viralMessages = [
+            "🔥 Someone just hit a 100-day streak!",
+            "⚡ 50 people flipped in the last minute!",
+            "🚀 #MindFlipChallenge trending on 3 platforms!",
+            "✨ New record: 10K flips in one hour!",
+            "🎯 Celebrity just joined the challenge!"
+        ];
+        
+        setInterval(() => {
+            if (Math.random() > 0.7) {
+                showToast(viralMessages[Math.floor(Math.random() * viralMessages.length)]);
+            }
+        }, 15000);
+
+        // Track user engagement for virality
+        let engagementScore = 0;
+        document.addEventListener('click', () => engagementScore++);
+        
+        setTimeout(() => {
+            if (engagementScore > 5) {
+                showToast("🏆 You're a MindFlip power user! Share your success!");
+            }
+        }, 60000);
+    </script>
+</body>
+</html>
